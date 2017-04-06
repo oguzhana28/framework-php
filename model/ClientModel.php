@@ -1,4 +1,5 @@
 <?php
+// een functie om 1 client op te halen met een id.
 function getClient($id) 
 {
 	$db = openDatabaseConnection();
@@ -12,7 +13,7 @@ function getClient($id)
 
 	return $query->fetch();
 }
-
+// alle clienten ophalen en het op te laden
 function getAllClients() 
 {
 	$db = openDatabaseConnection();
@@ -25,6 +26,7 @@ function getAllClients()
 
 	return $query->fetchAll();
 }
+// een functie om clienten te crearen
 function createClient(){
     $db = openDatabaseConnection();
     
@@ -54,6 +56,7 @@ function createClient(){
     
 	
 }
+// een functie om clienten te verwijden met het id die er meegegeven word
 function deleteClient($id){
     if (!$id) {
 		return false;
@@ -61,7 +64,7 @@ function deleteClient($id){
 	
 	$db = openDatabaseConnection();
 
-	$sql = "DELETE FROM client WHERE id=:id ";
+	$sql = "DELETE FROM client WHERE id=:id "; 
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		':id' => $id));
@@ -70,6 +73,7 @@ function deleteClient($id){
 	
 	header("Location:" . URL . "client/index");
 }
+// het aanpassen van de gegevens van een cluente
 function editClient($id){
     if (!$id) {
 		return false;

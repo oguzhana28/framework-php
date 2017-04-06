@@ -5,7 +5,7 @@
         <input type="text" id="name" name="name">
     </div>
     <div>
-        <label for="name">Species:</label>
+        <label for="name">Specie:</label>
         <input type="text" id="species" name="species">
     </div>
     <div>
@@ -29,6 +29,7 @@
 	endforeach;
 ?>
     </select>
+
     <div>
         <label></label>
         <input type="submit" value="Save">

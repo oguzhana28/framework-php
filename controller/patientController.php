@@ -13,13 +13,12 @@ function edit() {
         editPatient();
     }
     render("patients/edit", array(
-        'patient' => getPatient($id),
-        'owner' => getOwner($id)
+        'patient' => getPatient($id)
     ));
 }
 
 function create() {
-    render("patients/create", array('owners' => getAllOwners()));
+    render("patients/create", array('owners' => getAllOwners()), array('species' => getAllSpecies()));
 }
 
 function createSave() {

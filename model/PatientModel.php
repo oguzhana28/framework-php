@@ -36,18 +36,17 @@ function getAllOwners(){
 
 	return $query->fetchAll();
 }
-function getOwner($id){
+function getAllSpecies(){
     	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM client WHERE id = :id";
+	$sql = "SELECT * FROM species";
 	$query = $db->prepare($sql);
-	$query->execute(array(
-		":id" => $id));
-
+	$query->execute();
 	$db = null;
 
-	return $query->fetch();
+	return $query->fetchAll();
 }
+
     
 function createPatient(){
     $db = openDatabaseConnection();
